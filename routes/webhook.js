@@ -1,7 +1,7 @@
 const stripe = require("stripe")(process.env.STRIPE_KEY);
 const express = require("express");
 const router = express.Router();
-const Order = require("../models/OrderModel");
+const Order = require("../models/orderModel");
 
 let endpointSecret;
 endpointSecret =
