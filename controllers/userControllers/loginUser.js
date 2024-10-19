@@ -35,7 +35,7 @@ const loginUser = asyncHandler(async (req, res) => {
           httpOnly: true,
           expires: new Date(Date.now() + 1000 * 60 * 60 * 24),
           secure: true,
-          sameSite: none,
+          sameSite: "none",
         })
         .json({
           message: "login successful",
