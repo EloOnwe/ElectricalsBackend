@@ -7,7 +7,7 @@ const logOutUser = asyncHandler(async (req, res) => {
       httpOnly: true,
       expires: new Date(0),
       secure: true,
-      sameSite: none,
+      sameSite: "none",
     })
     .json({
       message: "logout successful",
