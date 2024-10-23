@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:5173", // or whatever your frontend origin is
+    origin: process.env.CLIENT_URL || "http://localhost:5173", // or whatever your frontend origin is
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
