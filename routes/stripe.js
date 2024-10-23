@@ -43,8 +43,8 @@ router.post("/create-checkout-session", async (req, res) => {
     shipping_address_collection: {
       allowed_countries: ["US", "NG"],
     },
-    success_url: `${process.env.CLIENT_URL}checkout-success`,
-    cancel_url: `${process.env.CLIENT_URL}cart`,
+    success_url: `${process.env.CLIENT_URL}/checkout-success`,
+    cancel_url: `${process.env.CLIENT_URL}/cart`,
   });
 
   res.send(session.url);
