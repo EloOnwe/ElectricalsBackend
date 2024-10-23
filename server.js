@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
+const path = require("path");
 
 const connectToDB = require("./dbConnection/dbConnect");
 const userRoute = require("./routes/userRoute");
@@ -23,6 +24,11 @@ const allowedOrigins = [
   "http://localhost:5173",
   "https://mickielect.onrender.com",
 ];
+
+app.use(express.static(path.join(__dirname, "build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
 
 app.use(express.json());
 app.use(bodyParser.json());
