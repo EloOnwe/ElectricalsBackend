@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-const path = require("path");
 
 const connectToDB = require("./dbConnection/dbConnect");
 const userRoute = require("./routes/userRoute");
@@ -20,7 +19,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://mickielect.onrender.com" || "http://localhost:5173/", // Replace with your frontend's origin
+    origin: "https://mickielect.onrender.com", // Replace with your frontend's origin
     credentials: true, // Allow credentials (cookies, headers)
   })
 );
