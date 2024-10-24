@@ -17,20 +17,11 @@ require("dotenv").config();
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cookieParser());
-const allowedOrigins = [
-  "https://mickielect.onrender.com",
-  "http://localhost:5173",
-];
+
 app.use(
   cors({
-    origin: (origin, callback) => {
-      if (allowedOrigins.includes(origin) || !origin) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true, // Allow credentials (cookies, authorization headers) if needed
+    origin: "https://mickielect.onrender.com", // Frontend origin
+    credentials: true, // Include cookies or other credentials in the request if needed
   })
 );
 
