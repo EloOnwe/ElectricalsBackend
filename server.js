@@ -25,6 +25,8 @@ app.use(
   })
 );
 
+app.use(express.static(process.cwd() + "/dist"));
+
 app.use(userRoute);
 app.use(productRoute);
 app.use(stripeRoute);
