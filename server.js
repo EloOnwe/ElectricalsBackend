@@ -20,7 +20,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "https://mickielect.onrender.com", // Frontend origin
+    origin: process.env.CLIENT_URL, // Frontend origin
     credentials: true, // Include cookies or other credentials in the request if needed
   })
 );
