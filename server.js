@@ -28,11 +28,6 @@ app.use(
 const path = require("path");
 app.use(express.static(path.join(__dirname, "dist")));
 
-// Catch-all route handler for SPA
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "dist", "index.html"));
-});
-
 app.use(userRoute);
 app.use(productRoute);
 app.use(stripeRoute);
