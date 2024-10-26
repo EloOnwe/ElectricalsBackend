@@ -26,7 +26,13 @@ app.use(
 );
 
 const path = require("path");
+
 app.use(express.static(path.join(__dirname, "dist")));
+
+// Handle all routes and send index.html to be handled by client-side routing
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "dist", "index.html"));
+});
 
 app.use(userRoute);
 app.use(productRoute);
